@@ -41,4 +41,4 @@ print(nombres)
 
 # ELIMINAR LA LIST
 del nombres
-print(nombres)
+# print(nombres)

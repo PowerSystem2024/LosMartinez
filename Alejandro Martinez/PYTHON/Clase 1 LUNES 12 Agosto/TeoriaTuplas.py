@@ -28,4 +28,4 @@ print(cocina)
 
 # ELIMIAR TUPLA
 del cocina
-print(cocina)
+# print(cocina)
