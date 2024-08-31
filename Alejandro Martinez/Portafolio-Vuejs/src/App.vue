@@ -1,51 +1,19 @@
 <script setup>
-
 // ACA VA SOLO JS, porq estamos en <SCRIPT>
 
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+  const nombreApellido = "Alejandro Martinez";
 </script>
 
 <template>
-  <!-- en TEMPLATE va solo en HTML -->
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <!-- en TEMPLATE va solo el HTML -->
+   <header>
+     <h1> {{ nombreApellido }} </h1>
+     <p> Bienvenido a Vue 3</p>
+   </header>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+/* ACA SOLO CSS, porq estmos en <STYLE> */
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
