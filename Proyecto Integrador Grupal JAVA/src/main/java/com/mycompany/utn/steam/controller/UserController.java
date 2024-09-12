@@ -1,15 +1,15 @@
-package controller;
+package com.mycompany.utn.steam.controller;
 
-import model.User;
-import service.UserService;
-import service.impl.UserServiceImpl;
+import com.mycompany.utn.steam.model.User;
+import com.mycompany.utn.steam.service.UserService;
+import com.mycompany.utn.steam.service.impl.UserServiceImpl;
 
 import java.util.List;
 
 public class UserController {
     private UserService userService = new UserServiceImpl();
 
-    public User getUser(Long id) {
+    public User getUser(int id) {
         return userService.getUserById(id);
     }
 
@@ -21,7 +21,7 @@ public class UserController {
         userService.saveUser(user);
     }
 
-    public void deleteUser(Long id) {
+    public void deleteUser(int id) {
         userService.deleteUser(id);
     }
 }
