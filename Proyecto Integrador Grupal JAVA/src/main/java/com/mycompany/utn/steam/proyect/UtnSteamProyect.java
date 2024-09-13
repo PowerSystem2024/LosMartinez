@@ -1,5 +1,6 @@
 package com.mycompany.utn.steam.proyect;
 
+import com.mycompany.utn.steam.controller.UserController;
 import com.mycompany.utn.steam.model.User;
 import com.mycompany.utn.steam.service.impl.UserServiceImpl;
 import com.mycompany.utn.steam.util.MenuDisplayer;
@@ -8,12 +9,12 @@ import java.util.Scanner;
 public class UtnSteamProyect {
     public static void main(String[] args) {
         displayHomeMenu();
-        // displayAllUsersTest();
+//         displayAllUsersTest();
     }
     
     private static void displayHomeMenu(){
         Scanner scanner = new Scanner(System.in);
-        MenuDisplayer.displayMenu("home");
+        MenuDisplayer.displayMenu("store");
         
         int option = -1;
         while (option != 4) {    
@@ -34,11 +35,11 @@ public class UtnSteamProyect {
                         System.out.println("Saliendo...");
                         break;
                     default:
-                        System.out.println("Opción no válida, por favor intente de nuevo.");
+                        System.out.println("Opción no valida, por favor intente de nuevo.");
                         break;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Entrada no válida, por favor ingrese un número.");
+                System.out.println("Entrada no valida, por favor ingrese un numero.");
             }
         }
         
@@ -46,15 +47,15 @@ public class UtnSteamProyect {
     }
     
     private static void displayAllUsersTest(){
-        // Iniciamos el userService
-        UserServiceImpl userService = new UserServiceImpl();
+        // Iniciamos el UserController
+        UserController userController = new UserController();
         
         // Como ejemplo de uso hago newUser y creo un User nuevo y lo guardo
-        var newUser = User.createUser("Pepe", "pepe@pepe.com");
-        userService.saveUser(newUser);
+        var newUser = User.createNewUser("Pepe", "pepe@pepe.com");
+        userController.createUser(newUser);
         
         // Busco todos los usuarios
-        var users = userService.getAllUsers();
+        var users = userController.getAllUsers();
         
         // Hago un foreach y lo muestro
         for (User user : users) {

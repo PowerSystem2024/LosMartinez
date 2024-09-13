@@ -2,7 +2,8 @@ package com.mycompany.utn.steam.model;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mycompany.utn.steam.service.impl.UserServiceImpl;
+import com.mycompany.utn.steam.controller.UserController;
+
 import java.util.Comparator;
 import java.util.Optional;
 
@@ -19,12 +20,12 @@ public class User {
         this.email = email;
     }
 
-    public static User createUser(String name, String email) {
-        UserServiceImpl userService = new UserServiceImpl();
-        var users = userService.getAllUsers();
+    public static User createNewUser(String name, String email) {
+        UserController userController = new UserController();
+        var users = userController.getAllUsers();
         Optional<User> maxIdUser = users.stream().max(Comparator.comparingInt(User::getId));
         
-        var nextId = 1;
+        int nextId = 1;
         if (maxIdUser.isPresent()) {
             int maxId = maxIdUser.get().getId();
             nextId = maxId + nextId;

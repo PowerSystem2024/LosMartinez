@@ -8,5 +8,15 @@
             "Editar Perfil",
             "Salir"
         ]
+    },
+    {
+        "slug": "store",
+        "title": "Los mejores juegos del momento",
+        "options": [
+            "Ofertas", 
+            "Deseados",
+            "Mas vendidos",
+            "Volver a Home"
+        ]
     }
 ]
