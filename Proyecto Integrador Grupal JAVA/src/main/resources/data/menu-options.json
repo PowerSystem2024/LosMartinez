@@ -1,0 +1,12 @@
+[
+    {
+        "slug": "home",
+        "title": "Bienvenido a Vapor!",
+        "options": [
+            "Tienda", 
+            "Mis Juegos",
+            "Editar Perfil",
+            "Salir"
+        ]
+    }
+]
