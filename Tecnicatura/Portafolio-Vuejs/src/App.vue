@@ -1,6 +1,7 @@
 <script setup>
 // ACA VA SOLO JS, porq estamos en <SCRIPT>
 import NavBar from "./components/NavBar.vue";
+import DatosPersonales from "./components/DatosPersonales.vue"
 </script>
 
 <template>
