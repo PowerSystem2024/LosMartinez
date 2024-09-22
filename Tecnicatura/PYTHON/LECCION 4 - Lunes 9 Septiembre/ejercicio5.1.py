@@ -5,10 +5,10 @@
 
 numero1 = int(input("Ingrese el primer numero: "));
 numero2 = int(input("Ingrese el segundo numero: "));
-suma = 0;
+suma = 0
 
 for i in range(numero1,numero2 +1):
     if i % 2 == 0:
-        suma += i;
+        suma += i
 
 print(f"La suma es: {suma}")
