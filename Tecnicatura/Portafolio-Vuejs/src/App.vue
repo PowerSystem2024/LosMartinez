@@ -2,7 +2,8 @@
 // ACA VA SOLO JS, porq estamos en <SCRIPT>
 import NavBar from "./components/NavBar.vue";
 import DatosPersonales from "./components/DatosPersonales.vue"
-import Educacion from "./components/Educacion.vue";
+import Educacion from "./components/EducacionComponente.vue";
+import Experiencia from "./components/ExperienciaComponente.vue"
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import Educacion from "./components/Educacion.vue";
     <NavBar/>
     <DatosPersonales/>
     <Educacion/>
+    <Experiencia/>
   </header>  
   <main>
     <!--El estilo CSS de section se encuentra en base.css -->
