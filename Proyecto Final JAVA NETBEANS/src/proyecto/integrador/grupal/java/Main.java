@@ -2,7 +2,7 @@ package proyecto.integrador.grupal.java;
 
 import java.util.Scanner;
 
-public class ProyectoIntegradorGrupalJAVA {
+public class Main {
 
     public static void main(String[] args) {
         
