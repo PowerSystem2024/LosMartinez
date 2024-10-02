@@ -1,0 +1,162 @@
+[
+    {
+        "id": "1",
+        "title": "The Last of Us Part II",
+        "desc": "Un juego de accion y aventura post-apocaliptico con una narrativa cautivadora.",
+        "release_date": "2020-06-19",
+        "categories": ["Accion", "Aventura"],
+        "price": 59.99
+    },
+    {
+        "id": "2",
+        "title": "Cyberpunk 2077",
+        "desc": "Un RPG de mundo abierto ambientado en un futuro distopico con profundas opciones de personalizacion.",
+        "release_date": "2020-12-10",
+        "categories": ["RPG", "Accion"],
+        "price": 49.99
+    },
+    {
+        "id": "3",
+        "title": "Red Dead Redemption 2",
+        "desc": "Una epica historia de vida en el corazon implacable de America, con un vasto mundo abierto.",
+        "release_date": "2018-10-26",
+        "categories": ["Accion", "Aventura"],
+        "price": 59.99
+    },
+    {
+        "id": "4",
+        "title": "Half-Life: Alyx",
+        "desc": "Un juego de realidad virtual ambientado en el universo de Half-Life, con una jugabilidad y narrativa inmersivas.",
+        "release_date": "2020-03-23",
+        "categories": ["Accion", "Aventura"],
+        "price": 59.99
+    },
+    {
+        "id": "5",
+        "title": "Among Us",
+        "desc": "Un juego multijugador de trabajo en equipo y traicion donde los jugadores deben completar tareas mientras descubren a los impostores.",
+        "release_date": "2018-11-16",
+        "categories": ["Fiesta", "Estrategia"],
+        "price": 5.00
+    },
+    {
+        "id": "6",
+        "title": "Hades",
+        "desc": "Un juego de rol roguelike que combina una jugabilidad adictiva con una narrativa rica.",
+        "release_date": "2020-09-17",
+        "categories": ["Roguelike", "Accion"],
+        "price": 24.99
+    },
+    {
+        "id": "7",
+        "title": "Valorant",
+        "desc": "Un shooter tactico con un gameplay preciso y habilidades unicas de agentes.",
+        "release_date": "2020-06-02",
+        "categories": ["Shooter", "Estrategia"],
+        "price": 0.00
+    },
+    {
+        "id": "8",
+        "title": "Minecraft",
+        "desc": "Un juego sandbox que permite a los jugadores construir y explorar mundos pixelados.",
+        "release_date": "2011-11-18",
+        "categories": ["Sandbox", "Aventura"],
+        "price": 26.95
+    },
+    {
+        "id": "9",
+        "title": "Call of Duty: Warzone",
+        "desc": "Un modo de battle royale en la serie Call of Duty, con combate rapido y jugabilidad tactica.",
+        "release_date": "2020-03-10",
+        "categories": ["Shooter", "Battle Royale"],
+        "price": 0.00
+    },
+    {
+        "id": "10",
+        "title": "Dota 2",
+        "desc": "Un juego de arena de batalla en linea multijugador con una jugabilidad estrategica profunda.",
+        "release_date": "2013-07-09",
+        "categories": ["MOBA", "Estrategia"],
+        "price": 0.00
+    },
+    {
+        "id": "11",
+        "title": "Apex Legends",
+        "desc": "Un juego de battle royale gratuito con personajes y habilidades unicas.",
+        "release_date": "2019-02-04",
+        "categories": ["Battle Royale", "Shooter"],
+        "price": 0.00
+    },
+    {
+        "id": "12",
+        "title": "The Witcher 3: Wild Hunt",
+        "desc": "Un RPG de mundo abierto con un mundo ricamente detallado y una narrativa cautivadora.",
+        "release_date": "2015-05-19",
+        "categories": ["RPG", "Aventura"],
+        "price": 39.99
+    },
+    {
+        "id": "13",
+        "title": "Grand Theft Auto V",
+        "desc": "Un juego de mundo abierto con una ciudad ficticia y una amplia gama de actividades.",
+        "release_date": "2013-09-17",
+        "categories": ["Accion", "Aventura"],
+        "price": 29.99
+    },
+    {
+        "id": "14",
+        "title": "Death Stranding",
+        "desc": "Un juego de accion con una narrativa unica y mecanicas de jugabilidad de mundo abierto.",
+        "release_date": "2019-11-08",
+        "categories": ["Accion", "Aventura"],
+        "price": 59.99
+    },
+    {
+        "id": "15",
+        "title": "Rust",
+        "desc": "Un juego de supervivencia donde los jugadores deben recolectar recursos y fabricar objetos para sobrevivir.",
+        "release_date": "2013-12-11",
+        "categories": ["Supervivencia", "Sandbox"],
+        "price": 39.99
+    },
+    {
+        "id": "16",
+        "title": "Stardew Valley",
+        "desc": "Un juego de simulacion de granja con elementos de RPG y elaboracion de objetos.",
+        "release_date": "2016-02-26",
+        "categories": ["Simulacion", "RPG"],
+        "price": 14.99
+    },
+    {
+        "id": "17",
+        "title": "Sekiro: Shadows Die Twice",
+        "desc": "Un juego de accion y aventura ambientado en una version reimaginada del Japon del final del periodo Sengoku.",
+        "release_date": "2019-03-22",
+        "categories": ["Accion", "Aventura"],
+        "price": 59.99
+    },
+    {
+        "id": "18",
+        "title": "Hollow Knight",
+        "desc": "Un juego de accion y aventura metroidvania con graficos dibujados a mano y una exploracion profunda.",
+        "release_date": "2017-02-24",
+        "categories": ["Accion", "Aventura"],
+        "price": 14.99
+    },
+    {
+        "id": "19",
+        "title": "Control",
+        "desc": "Un juego de accion y aventura sobrenatural ambientado en un edificio gubernamental misterioso.",
+        "release_date": "2019-08-27",
+        "categories": ["Accion", "Aventura"],
+        "price": 39.99
+    },
+    {
+        "id": "20",
+        "title": "Borderlands 3",
+        "desc": "Un looter-shooter con un estilo artistico unico y una amplia gama de armas y habilidades.",
+        "release_date": "2019-09-13",
+        "categories": ["Shooter", "RPG"],
+        "price": 59.99
+    }
+]
