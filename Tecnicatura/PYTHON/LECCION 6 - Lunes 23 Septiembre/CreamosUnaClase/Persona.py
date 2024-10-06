@@ -14,8 +14,7 @@ class Persona: #Creamos una clase
 
 persona1 = Persona("ale","martinez",24)
 persona2 = Persona("ale2","martinez2",242)
-
-print("Hola")
+print("hola")
 print(type(persona1))
 print(persona1.nombre)
 print(persona1.apellido)
