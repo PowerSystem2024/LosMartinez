@@ -20,6 +20,10 @@ public class UserController {
     public void createUser(User user) {
         userService.saveUser(user);
     }
+    
+    public void updateUser(int id, User userDetails) {
+        userService.updateUser(id, userDetails);
+    }
 
     public void deleteUser(int id) {
         userService.deleteUser(id);

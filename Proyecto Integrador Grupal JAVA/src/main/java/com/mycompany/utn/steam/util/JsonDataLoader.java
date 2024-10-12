@@ -1,6 +1,7 @@
 package com.mycompany.utn.steam.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mycompany.utn.steam.model.Game;
 import com.mycompany.utn.steam.model.Menu;
 import com.mycompany.utn.steam.model.User;
 
@@ -14,6 +15,16 @@ public class JsonDataLoader {
             ObjectMapper mapper = new ObjectMapper();
             InputStream is = JsonDataLoader.class.getResourceAsStream("/data/users.json");
             return mapper.readValue(is, mapper.getTypeFactory().constructCollectionType(List.class, User.class));
+        } catch (IOException e) {
+            throw new RuntimeException("Error loading users data", e);
+        }
+    }
+    
+    public static List<Game> loadGames() {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            InputStream is = JsonDataLoader.class.getResourceAsStream("/data/games.json");
+            return mapper.readValue(is, mapper.getTypeFactory().constructCollectionType(List.class, Game.class));
         } catch (IOException e) {
             throw new RuntimeException("Error loading users data", e);
         }

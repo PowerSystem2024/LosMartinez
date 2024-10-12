@@ -6,16 +6,27 @@
             "Tienda", 
             "Mis Juegos",
             "Editar Perfil",
+            "Cerrar Sesion",
             "Salir"
         ]
     },
     {
         "slug": "store",
-        "title": "Los mejores juegos del momento",
+        "title": "Bienvenido a Vapor",
         "options": [
-            "Ofertas", 
-            "Deseados",
-            "Mas vendidos",
+            "Todos los Juegos",
+            "Filtrar Juegos",
+            "Agregar Juego Nuevo",
+            "Volver a Menu"
+        ]
+    },
+    {
+        "slug": "game-list",
+        "title": "",
+        "options": [
+            "Comprar/Devolver Juego",
+            "Agregar/Quitar de Favoritos",
+            "Ignorar Juego",
             "Volver a Home"
         ]
     }
