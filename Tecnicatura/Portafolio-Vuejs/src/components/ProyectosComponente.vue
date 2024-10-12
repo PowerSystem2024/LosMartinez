@@ -1,33 +1,65 @@
 <script setup>
+
+import {ref} from "vue";
+
+var misProyectos = ref([]);
+
+misProyectos.value = ([
+    {
+        id:1,
+        src: "./src/assets/restaurant.jpg",
+        titulo: "Aplicacion de reservas para restaurantes (2023)",
+        descripcion: "cree una app movil con fluter",
+        proyectoLink: "https://www.google.com.ar",
+        gitbuhLink: "https://github.com/usuario/proyecto"
+    },
+    {
+        id:2,
+        src: "./src/assets/restaurant.jpg",
+        titulo: "Aplicacion de reservas para restaurantes (2023)",
+        descripcion: "cree una app movil con fluter",
+        proyectoLink: "https://www.google.com.ar",
+        gitbuhLink: "https://github.com/usuario/proyecto"
+    },
+    {
+        id:3,
+        src: "./src/assets/restaurant.jpg",
+        titulo: "Aplicacion de reservas para restaurantes (2023)",
+        descripcion: "cree una app movil con fluter",
+        proyectoLink: "https://www.google.com.ar",
+        gitbuhLink: "https://github.com/usuario/proyecto"
+    },
+    {
+        id:4,
+        src: "./src/assets/restaurant.jpg",
+        titulo: "Aplicacion de reservas para restaurantes (2023)",
+        descripcion: "cree una app movil con fluter",
+        proyectoLink: "https://www.google.com.ar",
+        gitbuhLink: "https://github.com/usuario/proyecto"
+    }
+])
+
 </script>
 
 <template>
+   <!-- Aquí va el código HTML de la galería de proyectos -->
     <div class="galeria">
-        <!-- PROYECTO 1 -->
-        <div class="proyecto">
-            <img src="/src/assets/imgproyecto.avif" alt="Proyecto 1">
+        <!-- Itera sobre cada proyecto en la lista de misProyectos -->
+        <!-- :key es una propiedad especial que se utiliza para identificar de forma única cada elemento en una lista de Vue.js -->
+        <li class="proyecto" v-for="proyecto in misProyectos" :key="proyecto.id">
+            <!-- Muestra la imagen del proyecto utilizando :src, que es una directiva de enlace de atributo en Vue.js -->
+            <img :src="proyecto.src" :alt="proyecto.titulo">
             <div class="proyecto-info">
-                <h3>Ecommerce</h3>
-                <p>Creé una plataforma de comercio electrónico que incrementó las ventas en un 35% durante el primer año.</p>
+                <!-- Muestra el título y la descripción del proyecto utilizando la interpolación de Vue.js -->
+                <h3>{{ proyecto.titulo }}</h3>
+                <p>{{ proyecto.descripcion }}</p>
                 <div class="proyecto-links">
-                    <a href="https://proyecto1.com" class="btn-ver-mas" target="_blank" rel="noopener noreferrer">Ver Proyecto</a>
-                    <a href="https://github.com/usuario/proyecto1" class="github-link" target="_blank" rel="noopener noreferrer">Ver Código en GitHub</a>
+                    <a :href="proyecto.proyectoLink" class="btn-ver-mas" target="_blank" rel="noopener noreferrer">Ver Proyecto</a>
+                    <a :href="proyecto.githubLink" class="github-link" target="_blank" rel="noopener noreferrer">Código en GitHub</a>
                 </div>
             </div>
-        </div>
-        <!-- PROYECTO 2 -->
-        <div class="proyecto">
-            <img src="/src/assets/imgproyecto.avif" alt="Proyecto 2">
-            <div class="proyecto-info">
-                <h3>Ecommerce</h3>
-                <p>Creé una plataforma de comercio electrónico que incrementó las ventas en un 35% durante el primer año.</p>
-                <div class="proyecto-links">
-                    <a href="https://proyecto1.com" class="btn-ver-mas" target="_blank" rel="noopener noreferrer">Ver Proyecto</a>
-                    <a href="https://github.com/usuario/proyecto1" class="github-link" target="_blank" rel="noopener noreferrer">Ver Código en GitHub</a>
-                </div>
-            </div>
-        </div>
-  </div>
+        </li>
+    </div>
 </template>
 
 <style scoped>
