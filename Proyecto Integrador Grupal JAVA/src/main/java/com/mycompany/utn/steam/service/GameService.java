@@ -10,4 +10,6 @@ public interface GameService {
     void updateGame(int id, Game game);
     void deleteGame(int id);
     String[] getAllGameCategories();
+    void displayGame(Game game);
+    Game newGameForm();
 }

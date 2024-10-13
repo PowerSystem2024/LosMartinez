@@ -1,24 +1,33 @@
 package com.mycompany.utn.steam.proyect;
 
 import com.mycompany.utn.steam.controller.GameController;
-import com.mycompany.utn.steam.controller.UserController;
+
 import com.mycompany.utn.steam.model.Game;
-import com.mycompany.utn.steam.model.User;
+
+import com.mycompany.utn.steam.service.GameService;
 import com.mycompany.utn.steam.service.impl.GameServiceImpl;
+
 import com.mycompany.utn.steam.util.MenuDisplayer;
-import java.util.Optional;
+import java.util.List;
+
 import java.util.Scanner;
 
 public class UtnSteamProyect {
+    Scanner scanner;
+    GameController gameController;
+    GameService gameService;
+       
     public static void main(String[] args) {
-//        displayHomeMenu();
-//         displayAllUsersTest();
-        displayAllGamesTest();
+        UtnSteamProyect proyect = new UtnSteamProyect();
+        
+        proyect.scanner = new Scanner(System.in);
+        proyect.gameController = new GameController();
+        proyect.gameService = new GameServiceImpl();
+        
+        proyect.displayStoreMenu();
     }
     
-    private static void displayHomeMenu(){
-        Scanner scanner = new Scanner(System.in);
-        
+    private void displayStoreMenu(){
         int option = -1;
         while (option != 4) {
             MenuDisplayer.displayMenu("store");
@@ -27,75 +36,80 @@ public class UtnSteamProyect {
 
                 switch (option) {
                     case 1:
-                        System.out.println("Has seleccionado la Opcion 1");
+                        System.out.println("Ingresando a la tienda");
+                        displayAllGames();
                         break;
                     case 2:
-                        System.out.println("Has seleccionado la Opcion 2");
+                        System.out.println("Ingresando a mis Juegos");
                         break;
                     case 3:
-                        System.out.println("Has seleccionado la Opcion 3");
+                        System.out.println("Creando nuevo juego");
+                        createNewGame();
                         break;
                     case 4:
                         System.out.println("Saliendo...");
-                        break;
+                        break;                
                     default:
-                        System.out.println("Opción no valida, por favor intente de nuevo.");
+                        System.out.println("ERROR: Opción no valida, por favor intente de nuevo.");
                         break;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Entrada no valida, por favor ingrese un numero.");
+                System.out.println("ERROR: Entrada no valida, por favor ingrese un numero.");
             }
         }
         
         scanner.close();
     }
     
-    private static void displayAllUsersTest(){
-        // Iniciamos el UserController
-        UserController userController = new UserController();
-        
-        // Como ejemplo de uso hago newUser y creo un User nuevo y lo guardo
-        var newUser = User.createNewUser("Pepe", "pepe@pepe.com");
-        userController.createUser(newUser);
-        
-        // Busco todos los usuarios
-        var users = userController.getAllUsers();
-        
-        // Hago un foreach y lo muestro
-        for (User user : users) {
-            MenuDisplayer.displayLine(user.getId()+"", false, false);
-            MenuDisplayer.displayLine(user.getName(), false, false);
-            MenuDisplayer.displayLine(user.getEmail(), false, true);
-        }
+    private void createNewGame(){
+        boolean createGame = false;
+        do {
+            System.out.println("Ingrese los datos para el Nuevo Juego");
+            Game newGame = gameService.newGameForm();          
+
+            gameService.displayGame(newGame);
+
+            createGame = MenuDisplayer.getConfirmationInput("Esta correcta la data del Juego?");
+
+            if (createGame) {
+                gameController.createGame(newGame);
+                System.out.println(newGame.getTitle() + " se agrego al listado de juegos");
+            } else {
+                if (!MenuDisplayer.getConfirmationInput("Desea volver a cargar la data?")) {
+                    System.out.println("El juego no fue creado, volviendo al menu principal");
+                    break;
+                }
+            }
+        } while (!createGame);
+        scanner.nextLine();
     }
     
-        
-    private static void displayAllGamesTest(){
-        Scanner scanner = new Scanner(System.in);
-        GameController gameController = new GameController();
-        
-        var games = gameController.getAllGames();
+    private void displayAllGames(){
+        List<Game> games = gameController.getAllGames();
         String option = "";
+        boolean exit = false;
         int index = 0;
         
-        while (option != "4") {  
+        while (!exit) {  
             Game game = games.get(index);
-            displayGame(game);
+            gameService.displayGame(game);
             MenuDisplayer.displayMenu("game-list");
             try {
                 option = scanner.nextLine();
 
                 switch (option) {
                     case "1":
+                        game.setIsOwned(!game.getIsOwned());
                         System.out.println("Has agregado " + game.getTitle() + " a tus juegos");
                         scanner.nextLine();
                         break;
                     case "2":
-                        System.out.println("Has agregado " + game.getTitle() + " a tu lista de deseados");
+                        game.setIsFavourite(!game.getIsFavourite());
+                        System.out.println("Has agregado " + game.getTitle() + " a tu lista de favoritos");
                         scanner.nextLine();
                         break;
                     case "3":
-                        System.out.println("Has agregado " + game.getTitle() + " a tu lista de ignorados");
+                        System.out.println("Has agregado " + game.getTitle() + " a tu lista de ignorados y no volvera a aparecer");
                         scanner.nextLine();
                         break;
                     case "p":
@@ -117,12 +131,7 @@ public class UtnSteamProyect {
                         System.out.println("Anterior Juego");
                         break;
                     case "4":
-                        System.out.println("Editando Juego");
-                        newGameForm();
-                        scanner.nextLine();
-                        option = "4";
-                        break;
-                    case "5":
+                        exit = true;
                         System.out.println("Volviendo...");
                         break;
                     default:
@@ -135,25 +144,5 @@ public class UtnSteamProyect {
             }
             System.out.println();
         }
-    }
-    
-    private static void displayGame(Game game){
-        MenuDisplayer.displayLine("Titulo: " + game.getTitle(), true, true);
-        MenuDisplayer.displayLine("Descripcion: " + game.getDesc(), false, false);
-        MenuDisplayer.displayLine("", false, false);
-        MenuDisplayer.displayLine("Fecha de Salida: " + game.getReleaseDate(), false, false);
-        MenuDisplayer.displayLine("Categorias: [" + String.join("], [", game.getCategories()) + "]", false, false);
-        MenuDisplayer.displayLine("Precio: $" + String.format("%.2f", game.getPrice()), true, true);
-        MenuDisplayer.displayLine("Anterior [A] - Proximo [P]", false, true);
-    }
-    
-    private static void newGameForm() {
-        GameController gameController = new GameController();
-        
-//        String title = MenuDisplayer.getStringInput("Titulo");
-//        String desc = MenuDisplayer.getStringInput("Descripcion");
-//        float price = MenuDisplayer.getFloatInput("Precio", Optional.of(0.0f), Optional.empty());
-//        String release_date = MenuDisplayer.getDateInput("Fecha de Lanzamiento");
-        String[] categories = MenuDisplayer.getOptionsInput("Categorias", gameController.getAllGameCategories());
     }
 }

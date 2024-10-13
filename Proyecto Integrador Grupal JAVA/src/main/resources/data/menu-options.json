@@ -1,21 +1,21 @@
 [
     {
-        "slug": "home",
-        "title": "Bienvenido a Vapor!",
+        "slug": "store",
+        "title": "Bienvenido a Vapor",
         "options": [
-            "Tienda", 
-            "Mis Juegos",
-            "Editar Perfil",
+            "Todos los Juegos",
+            "Filtrar Juegos",
+            "Agregar Juego Nuevo",
             "Salir"
         ]
     },
     {
-        "slug": "store",
-        "title": "Los mejores juegos del momento",
+        "slug": "game-list",
+        "title": "",
         "options": [
-            "Ofertas", 
-            "Deseados",
-            "Mas vendidos",
+            "Comprar/Devolver Juego",
+            "Agregar/Quitar de Favoritos",
+            "Ignorar Juego",
             "Volver a Home"
         ]
     },

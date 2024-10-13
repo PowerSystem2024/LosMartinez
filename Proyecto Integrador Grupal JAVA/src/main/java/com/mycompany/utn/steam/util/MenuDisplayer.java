@@ -60,43 +60,16 @@ public class MenuDisplayer {
                 value = Integer.parseInt(scanner.nextLine());
 
                 if (max.isPresent() && value > max.get()) {
-                    System.out.println("El valor ingresado supera el maximo permitido ("+ max.get() +")");
-                    break;
-                } else if(min.isPresent() && value > min.get()){
-                    System.out.println("El valor ingresado supera el minimo permitido ("+ min.get() +")");
-                    break;
-                }
-                
-                validValue = true;
-            } catch (NumberFormatException e) {
-                System.out.println("Entrada no valida, por favor ingrese un numero.");
-            }
-        }
-        
-        return value;
-    }
-    
-    public static float getFloatInput(String name, Optional<Float> min, Optional<Float> max){
-        Scanner scanner = new Scanner(System.in);
-        boolean validValue = false;
-        float value = 0;
-        
-        while(!validValue){
-            try {
-                System.out.print(name + ": ");
-                value = Float.parseFloat(scanner.nextLine());
-
-                if (max.isPresent() && value > max.get()) {
-                    System.out.println("El valor ingresado supera el maximo permitido ("+ max.get() +")");
-                    break;
+                    System.out.println("ERROR: El valor ingresado supera el maximo permitido ("+ max.get() +")");
+                    continue;
                 } else if(min.isPresent() && value < min.get()){
-                    System.out.println("El valor ingresado es menor al minimo permitido ("+ min.get() +")");
-                    break;
+                    System.out.println("ERROR: El valor ingresado supera el minimo permitido ("+ min.get() +")");
+                    continue;
                 }
                 
                 validValue = true;
             } catch (NumberFormatException e) {
-                System.out.println("Entrada no valida, por favor ingrese un numero.");
+                System.out.println("ERROR: Entrada no valida, por favor ingrese un numero.");
             }
         }
         
@@ -114,11 +87,10 @@ public class MenuDisplayer {
                 value = scanner.nextLine();
                 
                 if (isNumeric(value)) {
-                    System.out.println("Error: No se aceptan números.");
+                    System.out.println("ERROR: No se aceptan números.");
                     break;
                 }
                 
-                // Todo: Verificar si hace falta alguna validacion
                 validValue = true;
             } catch (NumberFormatException e) {
                 System.out.println("Entrada no valida, por favor ingrese un valor correcto.");
@@ -128,6 +100,61 @@ public class MenuDisplayer {
         return value;
     }
     
+    public static float getFloatInput(String name, Optional<Float> min, Optional<Float> max){
+        Scanner scanner = new Scanner(System.in);
+        boolean validValue = false;
+        float value = 0;
+        
+        while(!validValue){
+            try {
+                System.out.print(name + ": ");
+
+                value = Float.parseFloat(scanner.nextLine());
+
+                if (max.isPresent() && value > max.get()) {
+                    System.out.println("ERROR: El valor ingresado supera el maximo permitido ("+ max.get() +")");
+                    continue;
+                } else if(min.isPresent() && value < min.get()){
+                    System.out.println("ERROR: El valor ingresado es menor al minimo permitido ("+ min.get() +")");
+                    continue;
+                }
+                
+                validValue = true;
+            } catch (NumberFormatException e) {
+                System.out.println("ERROR: Entrada no valida, por favor ingrese un numero.");
+            }
+        }
+        
+        return value;
+    }
+    
+    public static boolean getConfirmationInput(String name) {
+        Scanner scanner = new Scanner(System.in);
+        boolean validValue = false;
+        boolean result = false;
+
+        while (!validValue) {
+            try {
+                System.out.print(name + " (si/no): ");
+                String value = scanner.nextLine().trim().toLowerCase();
+
+                if (value.equals("si")) {
+                    result = true;
+                    validValue = true;
+                } else if (value.equals("no")) {
+                    result = false;
+                    validValue = true;
+                } else {
+                    System.out.println("ERROR:  Ingrese 'si' o 'no'.");
+                }
+            } catch (Exception e) {
+                System.out.println("ERROR: Entrada no válida, por favor ingrese 'si' o 'no'.");
+            }
+        }
+
+        return result;
+    }
+
     public static String getDateInput(String name){
         Scanner scanner = new Scanner(System.in);
         boolean validValue = false;
@@ -172,26 +199,53 @@ public class MenuDisplayer {
         return date;
     }
     
-    public static String[] getOptionsInput(String name, String[] categories){
+    public static String[] getOptionsInput(String name, String[] options){
         Scanner scanner = new Scanner(System.in);
         boolean validValue = false;
-        ArrayList<String> categoryArray = new ArrayList<>();
+        ArrayList<String> optionArray = new ArrayList<>();
+        ArrayList<String> optionsSelected = new ArrayList<>();
+        ArrayList<String> optionsToIgnore = new ArrayList<>();
+        
+        System.out.println(name + ": ");
+        
+        int i = 1;
+        for (String option : options) {
+            System.out.println("- " + i + " " + option);
+            i++;
+        }
+
+        System.out.println("- " + i + " Otros");
         
         while(!validValue){
-            System.out.println(name + ": ");
-            try {               
-                for (String category : categories) {
-                    System.out.println(category);
+            try {                
+                int option = MenuDisplayer.getIntInput("Ingrese una opcion", Optional.of(1), Optional.of(i));
+
+                if (option > 0 && option < i) {
+                    if (optionsToIgnore.contains(options[option - 1])) {
+                        System.out.println("Esa opcion ya fue agregada");
+                    } else {
+                        optionsSelected.add(options[option - 1]);
+                        optionsToIgnore.add(options[option - 1]);
+                        System.out.println("Agregado: [" + String.join("], [", optionsSelected) + "]");
+                    }
+                } else if (option == i) {
+                    String newoption = MenuDisplayer.getStringInput("Ingrese la nueva opcion");
+                    
+                    if (optionsToIgnore.contains(newoption)) {
+                        System.out.println("Esa opcion ya fue agregada");
+                    } else {
+                        optionsSelected.add(newoption);
+                        optionsToIgnore.add(newoption);
+                        System.out.println("Agregado: [" + String.join("], [", optionsSelected) + "]");
+                    }   
                 }
-                
-                validValue = true;
+                validValue = !MenuDisplayer.getConfirmationInput("Seguir Agregando?");
             } catch (NumberFormatException e) {
                 System.out.println("ERROR: Entrada no valida, por favor ingrese un valor correcto.");
             }
         }
         
-        System.out.println("[" + String.join("], [", categoryArray) + "]");
-        return categories;
+        return optionsSelected.toArray(new String[0]);
     }
     
     // Private Functions
