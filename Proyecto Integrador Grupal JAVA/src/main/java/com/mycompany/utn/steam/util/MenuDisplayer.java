@@ -199,18 +199,18 @@ public class MenuDisplayer {
         return date;
     }
     
-    public static String[] getOptionsInput(String name, String[] categories){
+    public static String[] getOptionsInput(String name, String[] options){
         Scanner scanner = new Scanner(System.in);
         boolean validValue = false;
-        ArrayList<String> categoryArray = new ArrayList<>();
-        ArrayList<String> categoriesSelected = new ArrayList<>();
-        ArrayList<String> categoriesToIgnore = new ArrayList<>();
+        ArrayList<String> optionArray = new ArrayList<>();
+        ArrayList<String> optionsSelected = new ArrayList<>();
+        ArrayList<String> optionsToIgnore = new ArrayList<>();
         
         System.out.println(name + ": ");
         
         int i = 1;
-        for (String category : categories) {
-            System.out.println("- " + i + " " + category);
+        for (String option : options) {
+            System.out.println("- " + i + " " + option);
             i++;
         }
 
@@ -221,40 +221,31 @@ public class MenuDisplayer {
                 int option = MenuDisplayer.getIntInput("Ingrese una opcion", Optional.of(1), Optional.of(i));
 
                 if (option > 0 && option < i) {
-                    if (categoriesToIgnore.contains(categories[option - 1])) {
-                        System.out.println("Esa categoria ya fue agregada");
+                    if (optionsToIgnore.contains(options[option - 1])) {
+                        System.out.println("Esa opcion ya fue agregada");
                     } else {
-                        categoriesSelected.add(categories[option - 1]);
-                        categoriesToIgnore.add(categories[option - 1]);
-                        System.out.println("Agregado: [" + String.join("], [", categoriesSelected) + "]");
+                        optionsSelected.add(options[option - 1]);
+                        optionsToIgnore.add(options[option - 1]);
+                        System.out.println("Agregado: [" + String.join("], [", optionsSelected) + "]");
                     }
                 } else if (option == i) {
-                    String newCategory = MenuDisplayer.getStringInput("Ingrese la nueva categoria");
+                    String newoption = MenuDisplayer.getStringInput("Ingrese la nueva opcion");
                     
-                    if (categoriesToIgnore.contains(newCategory)) {
-                        System.out.println("Esa categoria ya fue agregada");
+                    if (optionsToIgnore.contains(newoption)) {
+                        System.out.println("Esa opcion ya fue agregada");
                     } else {
-                        categoriesSelected.add(newCategory);
-                        categoriesToIgnore.add(newCategory);
-                        System.out.println("Agregado: [" + String.join("], [", categoriesSelected) + "]");
+                        optionsSelected.add(newoption);
+                        optionsToIgnore.add(newoption);
+                        System.out.println("Agregado: [" + String.join("], [", optionsSelected) + "]");
                     }   
                 }
-                validValue = !MenuDisplayer.getConfirmationInput("Seguir Agregando categorias?");
-        
-        while(!validValue){
-            System.out.println(name + ": ");
-            try {               
-                for (String category : categories) {
-                    System.out.println(category);
-                }
-                
-                validValue = true;
+                validValue = !MenuDisplayer.getConfirmationInput("Seguir Agregando?");
             } catch (NumberFormatException e) {
                 System.out.println("ERROR: Entrada no valida, por favor ingrese un valor correcto.");
             }
         }
         
-        return categoriesSelected.toArray(new String[0]);
+        return optionsSelected.toArray(new String[0]);
     }
     
     // Private Functions

@@ -1,23 +1,12 @@
 [
     {
-        "slug": "home",
-        "title": "Bienvenido a Vapor!",
-        "options": [
-            "Tienda", 
-            "Mis Juegos",
-            "Editar Perfil",
-            "Cerrar Sesion",
-            "Salir"
-        ]
-    },
-    {
         "slug": "store",
         "title": "Bienvenido a Vapor",
         "options": [
             "Todos los Juegos",
             "Filtrar Juegos",
             "Agregar Juego Nuevo",
-            "Volver a Menu"
+            "Salir"
         ]
     },
     {
