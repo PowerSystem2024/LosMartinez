@@ -22,6 +22,7 @@ public class Game {
                 @JsonProperty("desc") String desc, @JsonProperty("release_date") String release_date, 
                 @JsonProperty("categories") String[] categories,  @JsonProperty("price") float price, 
                 @JsonProperty("is_owned") boolean is_owned, @JsonProperty("is_favourite") boolean is_favourite) {
+
         this.id = id;
         this.title = title;
         this.desc = desc;
@@ -36,6 +37,7 @@ public class Game {
         GameController gameController = new GameController();
         var games = gameController.getAllGames();
         Optional<Game> maxIdGame = games.stream().max(Comparator.comparingInt(Game::getId));
+
         int nextId = 1;
         if (maxIdGame.isPresent()) {
             int maxId = maxIdGame.get().getId();
@@ -68,7 +70,7 @@ public class Game {
     public float getPrice() {
         return price;
     }
-    
+
     public boolean getIsOwned() {
         return is_owned;
     }

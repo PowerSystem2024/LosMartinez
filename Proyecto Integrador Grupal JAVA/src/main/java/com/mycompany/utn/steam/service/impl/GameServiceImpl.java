@@ -60,7 +60,7 @@ public class GameServiceImpl implements GameService {
                     .distinct()
                     .toArray(String[]::new);
     }
-    
+
     @Override
     public void displayGame(Game game){
         String gameTitle = "ID " + game.getId() + " Titulo: " + game.getTitle();

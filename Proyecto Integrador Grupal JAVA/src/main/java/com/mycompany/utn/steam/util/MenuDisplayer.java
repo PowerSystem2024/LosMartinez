@@ -108,6 +108,7 @@ public class MenuDisplayer {
         while(!validValue){
             try {
                 System.out.print(name + ": ");
+
                 value = Float.parseFloat(scanner.nextLine());
 
                 if (max.isPresent() && value > max.get()) {
@@ -153,7 +154,7 @@ public class MenuDisplayer {
 
         return result;
     }
-    
+
     public static String getDateInput(String name){
         Scanner scanner = new Scanner(System.in);
         boolean validValue = false;
@@ -239,6 +240,15 @@ public class MenuDisplayer {
                     }   
                 }
                 validValue = !MenuDisplayer.getConfirmationInput("Seguir Agregando categorias?");
+        
+        while(!validValue){
+            System.out.println(name + ": ");
+            try {               
+                for (String category : categories) {
+                    System.out.println(category);
+                }
+                
+                validValue = true;
             } catch (NumberFormatException e) {
                 System.out.println("ERROR: Entrada no valida, por favor ingrese un valor correcto.");
             }
