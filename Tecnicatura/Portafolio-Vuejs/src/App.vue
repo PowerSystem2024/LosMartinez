@@ -6,12 +6,13 @@ import Educacion from "./components/EducacionComponente.vue"
 import Experiencia from "./components/ExperienciaComponente.vue"
 import Proyectos from "./components/ProyectosComponente.vue"
 import Habilidades from "./components/HabilidadesComponente.vue"
+import Intereses from "./components/InteresesComponente.vue"
 
 </script>
 
 <template>
   <!-- en TEMPLATE va solo el HTML -->
-  <header>
+  <header id="top">
     <!-- BARRA DE NAVEGACION -->
     <NavBar/>
     <DatosPersonales/>
@@ -30,13 +31,20 @@ import Habilidades from "./components/HabilidadesComponente.vue"
       <h2>Proyectos</h2>
       <Proyectos/>
     </section>
-    <section id="habilidades"><h2>Habilidades
+    <section id="habilidades">
+      <h2>Habilidades</h2>
       <!-- Componente habilidades -->
        <Habilidades/>
-    </h2></section>
-    <section id="intereses"><h2>Intereses</h2></section>
+    </section>
+    <section id="intereses"><h2>Intereses</h2>
+      <!-- Componente intereses -->
+       <Intereses/>
+    </section>
   </main>
-  
+  <footer>
+    <a href="#top">Inicio</a>
+    <p>@ 2024 Alejandro Martinez - Portafolio web</p>
+  </footer>
 </template>
 
 <style scoped>
