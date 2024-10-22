@@ -1,8 +1,10 @@
 from Cuadrado import Cuadrado
 from Rectangulo import Rectangulo
 
-cuadrado1 = Cuadrado(5,"Azul")
-rectangulo1 = Rectangulo(2,6,"Rojo")
+
+print("Creamos objeto clase cuadrado".center(50,"_"))
+cuadrado1 = Cuadrado(-1,"Azul")
+rectangulo1 = Rectangulo(2,2,"Rojo")
 print(cuadrado1.ancho)
 print(cuadrado1.alto)
 print(f"El area es: {cuadrado1.calcular_area()}")
