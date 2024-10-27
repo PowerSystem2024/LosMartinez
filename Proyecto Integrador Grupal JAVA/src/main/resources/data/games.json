@@ -6,7 +6,7 @@
         "release_date": "2020-06-19",
         "categories": ["Accion", "Aventura"],
         "price": 59.99,
-        "is_owned": false,
+        "is_owned": true,
         "is_favourite": false
     },
     {
@@ -17,7 +17,7 @@
         "categories": ["RPG", "Accion"],
         "price": 49.99,
         "is_owned": false,
-        "is_favourite": false
+        "is_favourite": true
     },
     {
         "id": "3",
@@ -26,8 +26,8 @@
         "release_date": "2018-10-26",
         "categories": ["Accion", "Aventura"],
         "price": 59.99,
-        "is_owned": false,
-        "is_favourite": false
+        "is_owned": true,
+        "is_favourite": true
     },
     {
         "id": "4",
@@ -46,7 +46,7 @@
         "release_date": "2018-11-16",
         "categories": ["Fiesta", "Estrategia"],
         "price": 5.00,
-        "is_owned": false,
+        "is_owned": true,
         "is_favourite": false
     },
     {
@@ -57,7 +57,7 @@
         "categories": ["Roguelike", "Accion"],
         "price": 24.99,
         "is_owned": false,
-        "is_favourite": false
+        "is_favourite": true
     },
     {
         "id": "7",
@@ -66,8 +66,8 @@
         "release_date": "2020-06-02",
         "categories": ["Shooter", "Estrategia"],
         "price": 0.00,
-        "is_owned": false,
-        "is_favourite": false
+        "is_owned": true,
+        "is_favourite": true
     },
     {
         "id": "8",
@@ -86,7 +86,7 @@
         "release_date": "2020-03-10",
         "categories": ["Shooter", "Battle Royale"],
         "price": 0.00,
-        "is_owned": false,
+        "is_owned": true,
         "is_favourite": false
     },
     {
@@ -97,7 +97,7 @@
         "categories": ["MOBA", "Estrategia"],
         "price": 0.00,
         "is_owned": false,
-        "is_favourite": false
+        "is_favourite": true
     },
     {
         "id": "11",
@@ -116,8 +116,8 @@
         "release_date": "2015-05-19",
         "categories": ["RPG", "Aventura"],
         "price": 39.99,
-        "is_owned": false,
-        "is_favourite": false
+        "is_owned": true,
+        "is_favourite": true
     },
     {
         "id": "13",
@@ -127,7 +127,7 @@
         "categories": ["Accion", "Aventura"],
         "price": 29.99,
         "is_owned": false,
-        "is_favourite": false
+        "is_favourite": true
     },
     {
         "id": "14",
@@ -136,7 +136,7 @@
         "release_date": "2019-11-08",
         "categories": ["Accion", "Aventura"],
         "price": 59.99,
-        "is_owned": false,
+        "is_owned": true,
         "is_favourite": false
     },
     {
@@ -156,8 +156,8 @@
         "release_date": "2016-02-26",
         "categories": ["Simulacion", "RPG"],
         "price": 14.99,
-        "is_owned": false,
-        "is_favourite": false
+        "is_owned": true,
+        "is_favourite": true
     },
     {
         "id": "17",
@@ -176,7 +176,7 @@
         "release_date": "2017-02-24",
         "categories": ["Accion", "Aventura"],
         "price": 14.99,
-        "is_owned": false,
+        "is_owned": true,
         "is_favourite": false
     },
     {
@@ -187,7 +187,7 @@
         "categories": ["Accion", "Aventura"],
         "price": 39.99,
         "is_owned": false,
-        "is_favourite": false
+        "is_favourite": true
     },
     {
         "id": "20",
@@ -196,6 +196,206 @@
         "release_date": "2019-09-13",
         "categories": ["Shooter", "RPG"],
         "price": 59.99,
+        "is_owned": true,
+        "is_favourite": false
+    },
+    {
+        "id": "21",
+        "title": "EA Sports FC 24",
+        "desc": "Un simulador de futbol que marca el comienzo de una nueva era para la franquicia FIFA.",
+        "release_date": "2023-09-29",
+        "categories": ["Deporte"],
+        "price": 69.99,
+        "is_owned": true,
+        "is_favourite": false
+    },
+    {
+        "id": "22",
+        "title": "The Legend of Zelda: Tears of the Kingdom",
+        "desc": "Una aventura epica en el mundo de Hyrule, con exploracion libre y una historia cautivadora.",
+        "release_date": "2023-05-12",
+        "categories": ["Aventura", "RPG"],
+        "price": 59.99,
+        "is_owned": false,
+        "is_favourite": true
+    },
+    {
+        "id": "23",
+        "title": "Hogwarts Legacy",
+        "desc": "Un RPG ambientado en el mundo de Harry Potter, donde los jugadores asisten a Hogwarts.",
+        "release_date": "2023-02-10",
+        "categories": ["RPG", "Aventura"],
+        "price": 69.99,
+        "is_owned": true,
+        "is_favourite": false
+    },
+    {
+        "id": "24",
+        "title": "Diablo IV",
+        "desc": "Un RPG de accion en un mundo oscuro donde cazas demonios en una lucha interminable.",
+        "release_date": "2023-06-06",
+        "categories": ["RPG", "Accion"],
+        "price": 69.99,
+        "is_owned": false,
+        "is_favourite": false
+    },
+    {
+        "id": "25",
+        "title": "Street Fighter 6",
+        "desc": "El ultimo juego de la franquicia de lucha, con nuevos personajes y tecnicas.",
+        "release_date": "2023-06-02",
+        "categories": ["Lucha"],
+        "price": 59.99,
+        "is_owned": false,
+        "is_favourite": false
+    },
+    {
+        "id": "26",
+        "title": "Baldur's Gate III",
+        "desc": "Un RPG de fantasia epica basado en el juego de rol de mesa.",
+        "release_date": "2023-08-03",
+        "categories": ["RPG", "Aventura"],
+        "price": 59.99,
+        "is_owned": false,
+        "is_favourite": true
+    },
+    {
+        "id": "27",
+        "title": "Call of Duty: Modern Warfare II",
+        "desc": "Una experiencia de combate moderno con modos multijugador y campania.",
+        "release_date": "2022-10-28",
+        "categories": ["Accion", "FPS"],
+        "price": 69.99,
+        "is_owned": true,
+        "is_favourite": false
+    },
+    {
+        "id": "28",
+        "title": "Armored Core VI: Fires of Rubicon",
+        "desc": "Un juego de mechas que te permite personalizar y combatir con robots en escenarios futuristas.",
+        "release_date": "2023-08-25",
+        "categories": ["Accion", "Ciencia Ficcion"],
+        "price": 59.99,
+        "is_owned": false,
+        "is_favourite": false
+    },
+    {
+        "id": "29",
+        "title": "Mortal Kombat 1",
+        "desc": "Una reinvencion de la saga de lucha Mortal Kombat con graficos mejorados y nuevos personajes.",
+        "release_date": "2023-09-19",
+        "categories": ["Lucha"],
+        "price": 69.99,
+        "is_owned": false,
+        "is_favourite": false
+    },
+    {
+        "id": "30",
+        "title": "Cyberpunk 2077: Phantom Liberty",
+        "desc": "Expansion de la historia original de Cyberpunk 2077 con nuevas misiones y personajes.",
+        "release_date": "2023-09-26",
+        "categories": ["Accion", "RPG"],
+        "price": 29.99,
+        "is_owned": true,
+        "is_favourite": false
+    },
+    {
+        "id": "31",
+        "title": "Remnant II",
+        "desc": "Un juego de disparos de supervivencia con elementos de RPG en un mundo postapocaliptico.",
+        "release_date": "2023-07-25",
+        "categories": ["Accion", "Aventura"],
+        "price": 49.99,
+        "is_owned": false,
+        "is_favourite": false
+    },
+    {
+        "id": "32",
+        "title": "F1 23",
+        "desc": "Simulador de carreras oficial de la Formula 1 con todos los equipos y pistas del circuito.",
+        "release_date": "2023-06-16",
+        "categories": ["Carreras", "Deporte"],
+        "price": 69.99,
+        "is_owned": false,
+        "is_favourite": false
+    },
+    {
+        "id": "33",
+        "title": "Forza Motorsport",
+        "desc": "Juego de simulacion de carreras con vehiculos de alto rendimiento y fisicas realistas.",
+        "release_date": "2023-10-10",
+        "categories": ["Carreras"],
+        "price": 59.99,
+        "is_owned": true,
+        "is_favourite": false
+    },
+    {
+        "id": "34",
+        "title": "Final Fantasy XVI",
+        "desc": "Un nuevo capitulo de la saga de fantasia con una historia oscura y combates intensos.",
+        "release_date": "2023-06-22",
+        "categories": ["RPG"],
+        "price": 69.99,
+        "is_owned": false,
+        "is_favourite": true
+    },
+    {
+        "id": "35",
+        "title": "Lies of P",
+        "desc": "Un juego de accion basado en la historia de Pinocho, pero con un giro oscuro y gotico.",
+        "release_date": "2023-09-19",
+        "categories": ["Accion", "RPG"],
+        "price": 59.99,
+        "is_owned": false,
+        "is_favourite": true
+    },
+    {
+        "id": "36",
+        "title": "Pikmin 4",
+        "desc": "Aventura en la que lideras una tropa de Pikmins en un planeta hostil.",
+        "release_date": "2023-07-21",
+        "categories": ["Aventura", "Estrategia"],
+        "price": 59.99,
+        "is_owned": false,
+        "is_favourite": true
+    },
+    {
+        "id": "37",
+        "title": "Atlas Fallen",
+        "desc": "Un juego de accion y aventura en un mundo de fantasia con combates y exploracion.",
+        "release_date": "2023-08-10",
+        "categories": ["Accion", "Aventura"],
+        "price": 49.99,
+        "is_owned": false,
+        "is_favourite": false
+    },
+    {
+        "id": "38",
+        "title": "Alan Wake II",
+        "desc": "Un thriller psicologico con elementos de terror, donde resuelves misterios en un pueblo oscuro.",
+        "release_date": "2023-10-27",
+        "categories": ["Terror", "Aventura"],
+        "price": 59.99,
+        "is_owned": true,
+        "is_favourite": true
+    },
+    {
+        "id": "39",
+        "title": "Xenoblade Chronicles 3: Future Redeemed",
+        "desc": "Expansion que explora los eventos previos a la historia principal de Xenoblade Chronicles 3.",
+        "release_date": "2023-04-25",
+        "categories": ["RPG", "Aventura"],
+        "price": 29.99,
+        "is_owned": false,
+        "is_favourite": true
+    },
+    {
+        "id": "40",
+        "title": "Sea of Stars",
+        "desc": "Un RPG de estilo retro inspirado en los clasicos, con graficos pixel art y combates por turnos.",
+        "release_date": "2023-08-29",
+        "categories": ["RPG", "Aventura"],
+        "price": 34.99,
         "is_owned": false,
         "is_favourite": false
     }

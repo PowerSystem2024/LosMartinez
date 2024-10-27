@@ -1,5 +1,6 @@
 package com.mycompany.utn.steam.service;
 
+import com.mycompany.utn.steam.model.Filter;
 import com.mycompany.utn.steam.model.Game;
 import java.util.List;
 
@@ -11,5 +12,9 @@ public interface GameService {
     void deleteGame(int id);
     String[] getAllGameCategories();
     void displayGame(Game game);
+    void displayFilter(Filter filter);
     Game newGameForm();
+    Filter newFilterForm();
+    void setFilter(Filter newFilter);
+    boolean hasFilter();
 }
