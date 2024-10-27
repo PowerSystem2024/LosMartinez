@@ -1,5 +1,6 @@
 package com.mycompany.utn.steam.controller;
 
+import com.mycompany.utn.steam.model.Filter;
 import com.mycompany.utn.steam.model.Game;
 import com.mycompany.utn.steam.service.GameService;
 import com.mycompany.utn.steam.service.impl.GameServiceImpl;
@@ -31,5 +32,13 @@ public class GameController {
     
     public String[] getAllGameCategories() {
         return gameService.getAllGameCategories();
+    }
+    
+    public void setFilter(Filter filter) {
+        gameService.setFilter(filter);
+    }
+    
+    public boolean hasFilter() {
+        return gameService.hasFilter();
     }
 }

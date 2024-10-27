@@ -2,14 +2,15 @@ package com.mycompany.utn.steam.proyect;
 
 import com.mycompany.utn.steam.controller.GameController;
 
+import com.mycompany.utn.steam.model.Filter;
 import com.mycompany.utn.steam.model.Game;
 
 import com.mycompany.utn.steam.service.GameService;
 import com.mycompany.utn.steam.service.impl.GameServiceImpl;
 
 import com.mycompany.utn.steam.util.MenuDisplayer;
-import java.util.List;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class UtnSteamProyect {
@@ -40,7 +41,8 @@ public class UtnSteamProyect {
                         displayAllGames();
                         break;
                     case 2:
-                        System.out.println("Ingresando a mis Juegos");
+                        System.out.println("Configurar filtro de juegos");
+                        createNewFilter();
                         break;
                     case 3:
                         System.out.println("Creando nuevo juego");
@@ -82,6 +84,40 @@ public class UtnSteamProyect {
             }
         } while (!createGame);
         scanner.nextLine();
+    }
+    
+    private void createNewFilter(){
+        boolean overrideFilter = true;
+        
+        if(gameController.hasFilter()) {
+            if(MenuDisplayer.getConfirmationInput("Ya posee un filtro desea quitarlo?")) {
+                gameController.setFilter(null);
+            }
+            overrideFilter = MenuDisplayer.getConfirmationInput("Desea generar uno nuevo?");
+        }
+        
+        if (overrideFilter) {
+            boolean setFilter = false;
+            do {
+                System.out.println("Ingrese los datos para configurar el Filtro, recuerde que cada filtro se suma al anterior");
+                Filter newFilter = gameService.newFilterForm();          
+
+                gameService.displayFilter(newFilter);
+
+                setFilter = MenuDisplayer.getConfirmationInput("Esta correcta la data del Filtro?");
+
+                if (setFilter) {
+                    gameController.setFilter(newFilter);
+                    System.out.println("El filtro fue agregado y se aplicara cuando entres al listado de juegos");
+                } else {
+                    if (!MenuDisplayer.getConfirmationInput("Desea volver a cargar la data?")) {
+                        System.out.println("El filtro no se creo y veras todos los juegos en el listado");
+                        break;
+                    }
+                }
+            } while (!setFilter);
+            scanner.nextLine();
+        }
     }
     
     private void displayAllGames(){
@@ -135,7 +171,7 @@ public class UtnSteamProyect {
                         System.out.println("Volviendo...");
                         break;
                     default:
-                        System.out.println("Opción no valida, por favor intente de nuevo.");
+                        System.out.println("Opcion no valida, por favor intente de nuevo.");
                         scanner.nextLine();
                         break;
                 }
@@ -144,5 +180,9 @@ public class UtnSteamProyect {
             }
             System.out.println();
         }
+    }
+    
+    private void addFilters(){
+        gameService.newFilterForm();
     }
 }
