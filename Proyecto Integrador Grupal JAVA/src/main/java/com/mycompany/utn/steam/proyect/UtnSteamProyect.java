@@ -136,16 +136,25 @@ public class UtnSteamProyect {
                 switch (option) {
                     case "1":
                         game.setIsOwned(!game.getIsOwned());
-                        System.out.println("Has agregado " + game.getTitle() + " a tus juegos");
+                        if (game.getIsOwned()) {
+                            System.out.println("Has agregado " + game.getTitle() + " a tu biblioteca");
+                        } else {
+                            System.out.println("Has devuelto " + game.getTitle() + " y ya no esta en tus biblioteca");
+                        }                        
                         scanner.nextLine();
                         break;
                     case "2":
                         game.setIsFavourite(!game.getIsFavourite());
-                        System.out.println("Has agregado " + game.getTitle() + " a tu lista de favoritos");
+                        if (game.getIsFavourite()) {
+                            System.out.println("Has agregado " + game.getTitle() + " a tu lista de favoritos");
+                        } else {
+                            System.out.println("Has quitado " + game.getTitle() + " a tu lista de favoritos");
+                        }                        
                         scanner.nextLine();
                         break;
                     case "3":
                         System.out.println("Has agregado " + game.getTitle() + " a tu lista de ignorados y no volvera a aparecer");
+                        gameController.deleteGame(game.getId());
                         scanner.nextLine();
                         break;
                     case "p":
