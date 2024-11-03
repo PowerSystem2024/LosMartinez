@@ -71,7 +71,7 @@ public class GameServiceImpl implements GameService {
     }
 
     @Override
-    public void displayGame(Game game){
+    public void displayGame(Game game, Boolean withNavigation){
         String gameTitle = "ID " + game.getId() + " Titulo: " + game.getTitle();
         if(game.getIsFavourite()) {
             gameTitle = "*FAV* " + gameTitle;
@@ -89,8 +89,11 @@ public class GameServiceImpl implements GameService {
             MenuDisplayer.displayLine("Precio: $" + String.format("%.2f", game.getPrice()), true, true);
         }
         
-        MenuDisplayer.displayLine("Anterior [A] - Proximo [P]", false, true);
+        if (withNavigation) {
+            MenuDisplayer.displayLine("Anterior [A] - Proximo [P]", false, true);
+        }        
     }
+
     
     @Override
     public void displayFilter(Filter filter){

@@ -11,7 +11,7 @@ public interface GameService {
     void updateGame(int id, Game game);
     void deleteGame(int id);
     String[] getAllGameCategories();
-    void displayGame(Game game);
+    void displayGame(Game game, Boolean withNavigation);
     void displayFilter(Filter filter);
     Game newGameForm();
     Filter newFilterForm();

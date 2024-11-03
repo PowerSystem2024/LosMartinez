@@ -69,7 +69,7 @@ public class UtnSteamProyect {
             System.out.println("Ingrese los datos para el Nuevo Juego");
             Game newGame = gameService.newGameForm();          
 
-            gameService.displayGame(newGame);
+            gameService.displayGame(newGame, false);
 
             createGame = MenuDisplayer.getConfirmationInput("Esta correcta la data del Juego?");
 
@@ -128,7 +128,7 @@ public class UtnSteamProyect {
         
         while (!exit) {  
             Game game = games.get(index);
-            gameService.displayGame(game);
+            gameService.displayGame(game, true);
             MenuDisplayer.displayMenu("game-list");
             try {
                 option = scanner.nextLine();
